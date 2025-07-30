@@ -25,7 +25,7 @@ O projeto utiliza dados públicos do CENIPA, incluindo:
 
 ### Abrir no Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/01-ETL_cenipa.ipynb) **01 - ETL e Preparação dos Dados**
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/01_ETL_cenipa.ipynb) **01 - ETL e Preparação dos Dados**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/02_EDA_cenipa.ipynb) **02 - Análise Exploratória de Dados**
 
