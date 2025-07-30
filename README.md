@@ -72,6 +72,8 @@ streamlit run app.py
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/03_Modelagem_Preditiva_CENIPA.ipynb) **03 - Modelagem Preditiva**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/Apresentacao_Projeto_CENIPA.ipynb) **Apresentação do Projeto**
+
 ## 🔍 Principais Análises Realizadas
 
 ### Análise Exploratória (EDA)
