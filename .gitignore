@@ -14,6 +14,9 @@ venv.bak/
 dist/
 build/
 
+# Arquivos de ambiente (contém credenciais sensíveis)
+.env
+
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 

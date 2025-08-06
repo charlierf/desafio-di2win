@@ -1,203 +1,153 @@
-# Análise de Dados de Ocorrências Aeronáuticas - CENIPA
+# 🛩️ Sistema de Análise Preditiva CENIPA
 
-## Descrição do Projeto
+Sistema completo de análise de dados aeronáuticos baseado nos dados do CENIPA (Centro de Investigação e Prevenção de Acidentes Aeronáuticos), com interface web moderna e modelo de machine learning para predição de gravidade de ocorrências.
 
-Este projeto consiste em uma análise completa dos dados de ocorrências aeronáuticas fornecidos pelo Centro de Investigação e Prevenção de Acidentes Aeronáuticos (CENIPA). O objetivo é aplicar técnicas de ciência de dados para extrair insights relevantes sobre as causas e características dos incidentes, acidentes e ocorrências graves na aviação brasileira.
+## 📋 Sobre o Projeto
 
-**🎯 PROJETO COMPLETO:** Este repositório contém uma solução end-to-end, desde a análise exploratória até uma aplicação web interativa para predição de gravidade de ocorrências aeronáuticas.
+Este sistema foi desenvolvido a partir de notebooks Jupyter de análise exploratória e modelagem, evoluindo para uma aplicação web completa que inclui:
 
-### Etapas do Projeto
+- **Dashboard interativo** com visualizações de dados em tempo real
+- **Sistema de predição** usando XGBoost para avaliar gravidade de ocorrências
+- **Interface moderna** construída com React + TypeScript + Shadcn/UI
+- **API robusta** em FastAPI com integração Supabase
+- **Análise completa** dos dados CENIPA desde ETL até deployment
 
-O projeto está organizado em três notebooks principais + aplicação web:
-
-1. **ETL (Extract, Transform, Load)** - Processo de extração, transformação e carregamento dos dados
-2. **EDA (Exploratory Data Analysis)** - Análise exploratória para identificação de padrões e insights
-3. **Modelagem Preditiva** - Desenvolvimento de modelos de machine learning para predição de ocorrências
-4. **Aplicação Web (Streamlit)** - Interface interativa para uso do modelo em produção
-
-### Conjunto de Dados
-
-O projeto utiliza dados públicos do CENIPA, incluindo:
-- **ocorrencia.csv** - Dados principais das ocorrências
-- **aeronave.csv** - Informações sobre as aeronaves envolvidas
-- **fator_contribuinte.csv** - Fatores que contribuíram para as ocorrências
-- **ocorrencia_tipo.csv** - Tipos de ocorrências
-- **recomendacao.csv** - Recomendações de segurança
-- **cenipa_master.csv** - Dataset consolidado após processo de ETL
-
-## 🎯 Modelo de Machine Learning
-
-### Desempenho do Modelo Final (XGBoost)
-- **Acurácia:** 84.21% no conjunto de teste
-- **Precision (Grave):** 83%
-- **Recall (Grave):** 92%
-- **F1-Score (Grave):** 87%
-
-O modelo é capaz de predizer com alta precisão se uma ocorrência aeronáutica tem potencial de ser **Grave** (Acidente/Incidente Grave) ou **Não Grave** (Incidente) com base em características como:
-- Estado da ocorrência (UF)
-- Tipo de aeronave
-- Tipo de motor
-- Segmento da aviação
-- Fase da operação
-
-## 🚀 Aplicação Web
-
-### Como Executar a Aplicação
-
-1. **Instalar dependências:**
-```bash
-pip install streamlit pandas joblib scikit-learn xgboost
-```
-
-2. **Executar a aplicação:**
-```bash
-streamlit run app.py
-```
-
-3. **Acessar no navegador:** A aplicação abrirá automaticamente em `http://localhost:8501`
-
-### Funcionalidades da Aplicação
-- Interface intuitiva para inserção de dados da ocorrência
-- Predição em tempo real da gravidade
-- Visualização das probabilidades de classificação
-- Feedback visual do nível de risco (Alto/Baixo)
-
-## 📓 Notebooks
-
-### Abrir no Google Colab
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/01_ETL_cenipa.ipynb) **01 - ETL e Preparação dos Dados**
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/02_EDA_cenipa.ipynb) **02 - Análise Exploratória de Dados**
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/03_Modelagem_Preditiva_CENIPA.ipynb) **03 - Modelagem Preditiva**
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/charlierf/desafio-di2win/blob/main/Apresentacao_Projeto_CENIPA.ipynb) **Apresentação do Projeto**
-
-## 🔍 Principais Análises Realizadas
-
-### Análise Exploratória (EDA)
-- Distribuição temporal das ocorrências aeronáuticas ao longo dos anos
-- Análise geográfica dos incidentes por região do Brasil
-- Identificação dos principais fatores contribuintes para acidentes
-- Classificação de severidade das ocorrências (Grave vs. Não Grave)
-- Padrões relacionados a tipos de aeronaves e operações
-- Análise de correlações entre variáveis
-
-### Insights Principais
-- Identificação de padrões sazonais nas ocorrências
-- Estados e regiões com maior incidência de acidentes graves
-- Tipos de aeronaves e fases de operação mais críticas
-- Fatores de risco mais relevantes para predição
-
-### Modelagem Preditiva
-- Comparação de múltiplos algoritmos (Random Forest, XGBoost)
-- Seleção de features baseada em importância
-- Validação cruzada e otimização de hiperparâmetros
-- Avaliação robusta com métricas detalhadas
-
-## 🚀 Tecnologias Utilizadas
-
-### Análise de Dados e ML
-- **Python** - Linguagem principal
-- **Pandas** - Manipulação e análise de dados
-- **NumPy** - Computação numérica
-- **Matplotlib & Seaborn** - Visualização de dados
-- **Scikit-learn** - Pré-processamento e métricas
-- **XGBoost** - Algoritmo de machine learning (modelo final)
-- **Joblib** - Serialização de modelos
-
-### Aplicação Web
-- **Streamlit** - Framework para criação da interface web
-- **Pandas** - Manipulação de dados na aplicação
-
-### Ambiente de Desenvolvimento
-- **Jupyter Notebook** - Ambiente de desenvolvimento e análise
-- **VS Code** - Editor de código
-- **Git** - Controle de versão
-
-## 📁 Estrutura do Projeto
+## 🏗️ Arquitetura do Sistema
 
 ```
 desafio-di2win/
-├── 01_ETL_cenipa.ipynb              # Notebook de ETL
-├── 02_EDA_cenipa.ipynb              # Notebook de análise exploratória
-├── 03_Modelagem_Preditiva_CENIPA.ipynb  # Notebook de modelagem
-├── app.py                           # Aplicação Streamlit
-├── modelo_cenipa_final.joblib       # Modelo treinado (XGBoost)
-├── opcoes_formulario.joblib         # Opções para interface
-├── data/                            # Dados do projeto
-│   ├── cenipa_master.csv           # Dataset principal processado
-│   ├── ocorrencia.csv              # Dados de ocorrências
-│   ├── aeronave.csv                # Dados de aeronaves
-│   ├── fator_contribuinte.csv      # Fatores contribuintes
-│   ├── ocorrencia_tipo.csv         # Tipos de ocorrências
-│   └── recomendacao.csv            # Recomendações
-└── README.md                        # Documentação do projeto
+├── 📊 notebooks/           # Jupyter notebooks de análise e modelagem
+├── 🎯 backend/            # API FastAPI + Modelo ML
+├── 🌐 frontend/           # Interface React + TypeScript
+├── 📁 data/              # Datasets CENIPA processados
+└── 📖 README.md          # Documentação do projeto
 ```
 
-## 👥 Autores
+## ✨ Funcionalidades Implementadas
 
-Este projeto foi desenvolvido por:
+### 🔍 Dashboard de Análise
+- **Estatísticas Gerais**: Total de ocorrências, acidentes e fatalidades
+- **Distribuição Geográfica**: Ocorrências por estado brasileiro
+- **Tipos de Aeronaves**: Distribuição por categoria de aeronave
+- **Tendências Temporais**: Análise de evolução mensal
+- **Fatores Contribuintes**: Principais causas de acidentes
+- **Ocorrências Recentes**: Lista das últimas ocorrências registradas
 
-- **Charlie Rodrigues Fonseca**
-- **Elana Tanan Sande**
+### 🤖 Sistema Preditivo
+- **Modelo XGBoost** treinado com 84% de acurácia
+- **Interface intuitiva** para entrada de dados
+- **Predição de gravidade** com níveis de confiança
+- **Análise de probabilidades** para tomada de decisão
 
-**Disciplina:** Tópicos de Inteligência Artificial 2025.1  
-**Instituição:** Universidade Federal de Sergipe (UFS)
+### 🎨 Interface Moderna
+- **Design responsivo** para desktop e mobile
+- **Tema escuro/claro** configurável
+- **Componentes reutilizáveis** com Shadcn/UI
+- **Navegação intuitiva** entre funcionalidades
+- **Visualizações interativas** com Recharts
 
-## 📊 Status do Projeto
+## 🚀 Tecnologias Utilizadas
 
-✅ **PROJETO CONCLUÍDO** - Análise completa com modelo em produção
+### Backend
+- **FastAPI** - Framework web moderno e rápido
+- **XGBoost** - Modelo de machine learning
+- **Pandas** - Manipulação e análise de dados
+- **Supabase** - Banco de dados e infraestrutura
+- **Uvicorn** - Servidor ASGI de alta performance
 
-### Entregáveis Finalizados:
-- [x] ETL completo dos dados CENIPA
-- [x] Análise exploratória detalhada
-- [x] Modelo de machine learning com 84% de acurácia
-- [x] Aplicação web interativa funcional
-- [x] Documentação completa
+### Frontend
+- **React 18** - Biblioteca de interface de usuário
+- **TypeScript** - Tipagem estática para JavaScript
+- **Vite** - Build tool rápido e moderno
+- **Shadcn/UI** - Componentes de interface elegantes
+- **Tailwind CSS** - Framework de utilitários CSS
+- **Recharts** - Biblioteca de gráficos responsivos
+- **Axios** - Cliente HTTP para APIs
 
-### Resultados Alcançados:
-- Modelo XGBoost otimizado para predição de gravidade
-- Interface web para uso prático do modelo
-- Insights valiosos sobre segurança aeronáutica no Brasil
-- Pipeline completo de ciência de dados implementado
+### Análise de Dados
+- **Jupyter Notebook** - Ambiente de desenvolvimento
+- **Pandas** - Manipulação de dados
+- **Scikit-learn** - Ferramentas de machine learning
+- **Matplotlib/Seaborn** - Visualização de dados
 
-## 🎯 Próximos Passos (Melhorias Futuras)
+## 📊 Conjunto de Dados
 
-- [ ] Deploy da aplicação em plataforma cloud (Heroku/Streamlit Cloud)
-- [ ] Incorporação de novos dados e features
-- [ ] Desenvolvimento de dashboard analítico
-- [ ] API REST para integração com outros sistemas
-- [ ] Análise temporal mais aprofundada (séries temporais)
+Os dados utilizados são provenientes do **CENIPA** e incluem:
+- **Ocorrências aeronáuticas** desde 2008
+- **Informações de aeronaves** envolvidas
+- **Fatores contribuintes** para acidentes
+- **Dados geográficos** e temporais
+- **Classificação de gravidade** das ocorrências
 
-## 🔄 Como Reproduzir o Projeto
+## 🎯 Modelo de Machine Learning
 
-### 1. Clonar o Repositório
+### Características do Modelo
+- **Algoritmo**: XGBoost Classifier
+- **Acurácia**: 84%
+- **Features**: 85 variáveis categóricas (one-hot encoded)
+- **Target**: Classificação binária (Grave / Não Grave)
+
+### Variáveis Preditoras
+- Estado da ocorrência (UF)
+- Tipo de veículo (aeronave)
+- Tipo de motor
+- Segmento de registro
+- Fase da operação
+
+## 🚦 Como Executar
+
+### Pré-requisitos
+- Python 3.8+
+- Node.js 16+
+- npm ou yarn
+
+### Backend
 ```bash
-git clone https://github.com/charlierf/desafio-di2win.git
-cd desafio-di2win
+cd backend
+pip install -r requirements.txt
+python main.py
 ```
 
-### 2. Instalar Dependências
+### Frontend
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost streamlit joblib jupyter
+cd frontend
+npm install
+npm run dev
 ```
 
-### 3. Executar os Notebooks
-Execute os notebooks na sequência:
-1. `01_ETL_cenipa.ipynb` - Para processamento dos dados
-2. `02_EDA_cenipa.ipynb` - Para análise exploratória
-3. `03_Modelagem_Preditiva_CENIPA.ipynb` - Para treinamento do modelo
+### Acesso
+- **Dashboard**: http://localhost:8080
+- **API**: http://localhost:8000
+- **Documentação API**: http://localhost:8000/docs
 
-### 4. Executar a Aplicação
-```bash
-streamlit run app.py
-```
+## 📈 Resultados Obtidos
 
-### 5. Dados
-Os dados estão disponíveis na pasta `data/` e foram obtidos do site oficial do CENIPA.
+### Performance do Modelo
+- **Acurácia geral**: 84%
+- **Predições variáveis**: Diferentes probabilidades para cenários distintos
+- **Confiança adaptativa**: Níveis Alto/Médio/Baixo baseados na certeza
 
----
+### Insights dos Dados
+- **1000+ ocorrências** analisadas
+- **98 acidentes** identificados no dataset
+- **10 estados** com maior incidência
+- **Tendências temporais** identificadas
 
-> **Nota:** Este projeto faz parte do desafio de ciência de dados da Di2win e tem fins acadêmicos e educacionais.
+## 🔮 Próximos Passos
+
+- [ ] Implementação de filtros temporais mais granulares
+- [ ] Adição de mais variáveis ao modelo preditivo
+- [ ] Sistema de alertas automáticos
+- [ ] Integração com APIs externas de meteorologia
+- [ ] Análise de sentimento em relatórios textuais
+
+## 📝 Documentação Técnica
+
+Para mais detalhes sobre a implementação, consulte:
+- `/notebooks/` - Análise exploratória e desenvolvimento do modelo
+- `/backend/main.py` - Código principal da API
+- `/frontend/src/` - Código-fonte da interface
+
+## 🤝 Contribuições
+
+Este projeto representa uma implementação completa de um sistema de análise preditiva, desde a exploração inicial dos dados em notebooks até uma aplicação web funcional com modelo de machine learning em produção.
